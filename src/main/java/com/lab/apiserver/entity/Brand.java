@@ -10,9 +10,6 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by jdw37 on 2017-08-05.
- */
 @Data
 @Entity
 public class Brand {
