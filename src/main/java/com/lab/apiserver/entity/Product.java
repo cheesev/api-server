@@ -17,11 +17,11 @@ public class Product {
     String shopProdId;
 
     @MapsId
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "image_id")
     ProductThumbnail productThumbnail;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id")
     Brand brand;
 
