@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@EqualsAndHashCode(exclude="product")
 public class ProductThumbnail {
     @Id
     Long id;
