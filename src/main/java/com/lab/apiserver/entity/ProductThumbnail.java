@@ -3,14 +3,8 @@ package com.lab.apiserver.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
-/**
- * Created by jdw37 on 2017-08-05.
- */
 @Data
 @Entity
 @EqualsAndHashCode(exclude="product")
@@ -22,7 +16,9 @@ public class ProductThumbnail {
     String filename;
     String thumbnail;
 
-    @OneToOne(mappedBy = "productThumbnail")
+
+    @OneToOne(mappedBy = "productThumbnail", fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
     Product product;
 
     public ProductThumbnail(){}

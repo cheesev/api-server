@@ -1,13 +1,9 @@
 package com.lab.apiserver.entity;
 
-
 import lombok.Data;
 
 import javax.persistence.*;
 
-/**
- * Created by jdw37 on 2017-08-05.
- */
 @Data
 @Entity
 public class Product {
@@ -20,11 +16,12 @@ public class Product {
     Long contractorId;
     String shopProdId;
 
+    @MapsId
     @OneToOne
     @JoinColumn(name = "image_id")
     ProductThumbnail productThumbnail;
 
-    @ManyToOne // Lazy 쓰면 안되네.
+    @ManyToOne
     @JoinColumn(name = "brand_id")
     Brand brand;
 
